@@ -19,11 +19,15 @@ async def on_ready():
   
   print("봇 이름:",client.user.name,"봇 아이디:",client.user.id,"봇 버전:",discord.__version__)
 
-
-client.run(os.environ['token'])
-
-@client.event
 async def on_member_join(member):
     channel = client.get_channel('718410583396843614')
     await member.send('방가방가\n $ 명령어를 통해 다양한 서비스를 제공받을 수 있으니 해보라구 !') #privit 한 메세지를 보내줌 await channel.send('안뇽')
     await channel.send('안뇽')
+
+client.run(os.environ['token'])
+
+#@client.event
+#async def on_member_join(member):
+#    channel = client.get_channel('718410583396843614')
+#    await member.send('방가방가\n $ 명령어를 통해 다양한 서비스를 제공받을 수 있으니 해보라구 !') #privit 한 메세지를 보내줌 await channel.send('안뇽')
+#    await channel.send('안뇽')
