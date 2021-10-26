@@ -45,7 +45,7 @@ async def on_message(message):
         await message.author.send ("{} | {}, User, Hello".format(message.author, message.author.mention))
 
     if message.content == "특정입력":
-        ch = client.get_channel(채널 ID를 입력하는 곳)
+        ch = client.get_channel(902245684865015860)
         await ch.send ("{} | {}, User, Hello".format(message.author, message.author.mention))
 
 client.run(os.environ['token'])
