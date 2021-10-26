@@ -1,4 +1,3 @@
-@@ -1,51 +1,51 @@
 import discord, asyncio, datetime, pytz
 from discord.ext import commands
 import os
