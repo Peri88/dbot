@@ -1,4 +1,4 @@
-import discord
+import discord, asyncio
 from discord.ext import commands
 import os
 
@@ -31,4 +31,4 @@ async def on_member_remove(member):
     fmt = '{0.mention} 님이 서버에서 나가셨습니다.'
     await client.send_message(channel, fmt.format(member, member.server))
 
-client.run(os.environ['token'])
+client.run(os.environ['OTAyMDQwODIwNDYxNDY5NzE4.YXYo-g.90KhOq9Gl8JSCnPlQ6Oud68EQn0'])
