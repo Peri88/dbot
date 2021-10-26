@@ -1,4 +1,4 @@
-import discord, asyncio
+import discord, asyncio, datetime, pytz
 from discord.ext import commands
 import os
 
@@ -30,5 +30,22 @@ async def on_member_remove(member):
     channel = member.server.get_channel("902039163698819093")
     fmt = '{0.mention} 님이 서버에서 나가셨습니다.'
     await client.send_message(channel, fmt.format(member, member.server))
+
+client = discord.Client()
+
+@client.event
+async def on_ready(): # 봇이 실행되면 한 번 실행됨
+    print("이 문장은 Python의 내장 함수를 출력하는 터미널에서 실행됩니다\n지금 보이는 것 처럼 말이죠")
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("봇의 상태매세지"))
+
+@client.event
+async def on_message(message):
+    if message.content == "테스트": # 메세지 감지
+        await message.channel.send ("{} | {}, Hello".format(message.author, message.author.mention))
+        await message.author.send ("{} | {}, User, Hello".format(message.author, message.author.mention))
+
+    if message.content == "특정입력":
+        ch = client.get_channel(채널 ID를 입력하는 곳)
+        await ch.send ("{} | {}, User, Hello".format(message.author, message.author.mention))
 
 client.run(os.environ['token'])
