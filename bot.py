@@ -1,3 +1,4 @@
+@@ -1,51 +1,51 @@
 import discord, asyncio, datetime, pytz
 from discord.ext import commands
 import os
@@ -19,7 +20,6 @@ async def on_ready():
   
   print("봇 이름:",client.user.name,"봇 아이디:",client.user.id,"봇 버전:",discord.__version__)
 
-
 @client.event
 async def on_member_join(member):
     fmt = '{1.name} 에 오신것을 환영합니다., {0.mention} 님'
@@ -31,7 +31,6 @@ async def on_member_remove(member):
     channel = member.server.get_channel("902039163698819093")
     fmt = '{0.mention} 님이 서버에서 나가셨습니다.'
     await client.send_message(channel, fmt.format(member, member.server))
-
 
 client = discord.Client()
 
@@ -47,6 +46,7 @@ async def on_message(message):
         await message.author.send ("{} | {}, User, Hello".format(message.author, message.author.mention))
 
     if message.content == "특정입력":
+        ch = client.get_channel(902245684865015860)
         ch = client.get_channel(902245684865015860)
         await ch.send ("{} | {}, User, Hello".format(message.author, message.author.mention))
 
