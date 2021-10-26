@@ -18,6 +18,7 @@ async def on_ready():
   #await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="영상 시청중"))
   
   print("봇 이름:",client.user.name,"봇 아이디:",client.user.id,"봇 버전:",discord.__version__)
+client.run(os.environ['token'])
 
 @client.event
 async def on_member_join(member):
@@ -30,6 +31,7 @@ async def on_member_remove(member):
     channel = member.server.get_channel("902039163698819093")
     fmt = '{0.mention} 님이 서버에서 나가셨습니다.'
     await client.send_message(channel, fmt.format(member, member.server))
+client.run(os.environ['token'])
 
 client = discord.Client()
 
